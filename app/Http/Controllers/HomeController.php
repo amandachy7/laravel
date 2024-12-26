@@ -19,4 +19,20 @@ class HomeController extends Controller
         $total_barang_masuk = PurchaseDetail::sum('jumlah');
         return view('dashboard', compact('total_penjualan', 'total_pembelian', 'total_barang_keluar', 'total_barang_masuk')); // Kirim data ke view
     }
+    public function apiDashboard()
+{
+    $total_penjualan = DB::table('sales')->count();
+    $total_pembelian = Purchase::count();
+    $total_barang_keluar = Details::sum('jumlah');
+    $total_barang_masuk = PurchaseDetail::sum('jumlah');
+
+    return response()->json([
+        'totalPenjualan' => $total_penjualan,
+        'totalPembelian' => $total_pembelian,
+        'totalBarangKeluar' => $total_barang_keluar,
+        'totalBarangMasuk' => $total_barang_masuk,
+    ]);
 }
+
+}
+

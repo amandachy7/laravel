@@ -60,4 +60,5 @@ class SalesController extends Controller
 
         return redirect('penjualan');
     }
+    
 }

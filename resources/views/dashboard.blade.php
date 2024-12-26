@@ -74,7 +74,8 @@
               <div class="numbers">
                 <p class="text-sm mb-0 text-capitalize font-weight-bold">Barang Masuk</p>
                 <h5 class="font-weight-bolder mb-0">
-                  {{ $total_barang_masuk}}
+                  {{ $total_barang_masuk }}
+
                 </h5>
               </div>
             </div>

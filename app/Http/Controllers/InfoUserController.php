@@ -59,4 +59,11 @@ class InfoUserController extends Controller
 
         return redirect('user-management');
     }
+    public function userProfile(Request $request)
+{
+    // Mengembalikan data profil pengguna yang sedang login
+    return response()->json(['user' => Auth::user()]);
+}
+
+
 }
